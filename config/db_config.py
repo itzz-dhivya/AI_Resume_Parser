@@ -10,11 +10,11 @@ def get_conn():
     try:
         conn = mysql.connector.connect(
             host=os.getenv("AIVEN_HOST"),
-            port=os.getenv("AIVEN_PORT"),
+            port=int(os.getenv("AIVEN_PORT")),  # ✅ Convert to int
             user=os.getenv("AIVEN_USER"),
             password=os.getenv("AIVEN_PASSWORD"),
             database=os.getenv("AIVEN_DB"),
-            ssl_ca="config/ca.pem",
+            ssl_ca="config/ca.pem",  # Make sure ca.pem is in config/ folder
             ssl_verify_cert=True
         )
 
