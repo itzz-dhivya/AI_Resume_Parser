@@ -1,0 +1,34 @@
+https://airesumeparser.streamlit.app/
+
+
+(.venv) C:\Users\HP\AI_Resume_Parser>mysql -h mysql-302fe9fd-dhivya032005-a46b.d.aivencloud.com -P 14750 -u avnadmin -p --ssl-mode=PREFERRED
+Enter password: ************************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 51510
+Server version: 8.0.35 Source distribution
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective    
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABES;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL 
+server version for the right syntax to use near 'DATABES' at line 1
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| defaultdb          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| resume_parser      |
+| sys                |
++--------------------+
+6 rows in set (0.42 sec)
+
+mysql>

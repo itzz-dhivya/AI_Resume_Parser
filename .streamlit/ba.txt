@@ -1,0 +1,3 @@
+cd C:\Users\HP\ads_website\backend
+.venv\Scripts\activate
+python app.py

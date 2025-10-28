@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 load_dotenv()
-
 import streamlit as st
 import os
 import hashlib
@@ -511,7 +510,7 @@ def home_module():
     with col1:
         if lottie_home: st_lottie(lottie_home, height=220)
         card_container("""
-            <h1>👋 Welcome to <strong>AI Resume Analyzer</strong></h1>
+            <h1>👋 Welcome <strong>AI Resume Analyzer</strong></h1>
             <p class='small-note'>Upload your resume (PDF/DOCX) to get role suggestions, missing skills and curated courses.</p>
         """)
     with col2:
