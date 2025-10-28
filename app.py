@@ -513,8 +513,19 @@ def home_module():
             st_lottie(lottie_home, height=220)
         card_container("""
             <div style='text-align: center;'>
-                <h1 style='margin-bottom: 0;'>👋 Welcome</h1>
-                <h1 style='margin-top: 5px; color: #4A90E2; font-weight: bold;'>AI Resume Analyzer</h1>
+                <h1 style='margin-bottom: 0; color: black;'>👋 Welcome</h1>
+                <h1 style='
+                    margin-top: 5px;
+                    font-weight: bold;
+                    font-family: Poppins, sans-serif;
+                    background: linear-gradient(90deg, #ff512f, #dd2476, #1e90ff, #00c9a7);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 42px;
+                    letter-spacing: 1px;
+                '>
+                    AI Resume Analyzer
+                </h1>
                 <p class='small-note'>
                     Upload your resume (PDF/DOCX) to get role suggestions, missing skills and curated courses.
                 </p>
