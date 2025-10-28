@@ -506,21 +506,30 @@ sidebar_menu()
 # ----------------- MODULES -----------------
 def home_module():
     lottie_home = load_lottie("https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json")
-    col1, col2 = st.columns([2,1])
+    col1, col2 = st.columns([2, 1])
+
     with col1:
-        if lottie_home: st_lottie(lottie_home, height=220)
+        if lottie_home:
+            st_lottie(lottie_home, height=220)
         card_container("""
-            <h1>👋 Welcome <strong>AI Resume Analyzer</strong></h1>
-            <p class='small-note'>Upload your resume (PDF/DOCX) to get role suggestions, missing skills and curated courses.</p>
+            <div style='text-align: center;'>
+                <h1 style='margin-bottom: 0;'>👋 Welcome</h1>
+                <h1 style='margin-top: 5px; color: #4A90E2; font-weight: bold;'>AI Resume Analyzer</h1>
+                <p class='small-note'>
+                    Upload your resume (PDF/DOCX) to get role suggestions, missing skills and curated courses.
+                </p>
+            </div>
         """)
+
     with col2:
         st.markdown("<div class='glass-card' style='text-align:left'>", unsafe_allow_html=True)
         st.subheader("Quick Tips for Best Results ✅")
         st.write("- Supported file types: **PDF** and **DOCX** only.")
         st.write("- Highlight **projects, internships, and certifications**.")
-        st.write("- Add a short **career goal statement** for personalized recommendation")
-        st.write("- Only for computer sector students")
+        st.write("- Add a short **career goal statement** for personalized recommendation.")
+        st.write("- Only for **computer sector students**.")
         st.markdown("</div>", unsafe_allow_html=True)
+
 
 def login_module():
     card_container("<h2>🔐 Login</h2>")
