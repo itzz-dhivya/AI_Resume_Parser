@@ -516,7 +516,7 @@ def home_module():
                 <h1 style='margin-bottom: 0;'>👋 Welcome</h1>
                 <h1 style='
                     margin-top: 5px;
-                    color: #1a1a1a;
+                    color: #f5f5f5;
                     font-weight: bold;
                     font-size: 42px;
                 '>
