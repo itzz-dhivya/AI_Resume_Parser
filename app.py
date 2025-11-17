@@ -924,14 +924,7 @@ def role_suggestion_module():
 
     role_info = role_skills_courses.get(selected_role, {})
     role_skills = role_info.get("skills", [])
-
-    # Ensure courses is a list and has same length as role_skills
-    courses = role_info.get("courses")
-    if not isinstance(courses, list):
-        courses = ["No course available"] * len(role_skills)
-    elif len(courses) < len(role_skills):
-        # Pad missing course entries
-        courses += ["No course available"] * (len(role_skills) - len(courses))
+    role_courses = role_info.get("courses", {})  # Now a dict: skill -> list of courses
 
     matched_skills = [s for s in role_skills if s in resume_skills]
     missing_skills = [s for s in role_skills if s not in resume_skills]
@@ -939,8 +932,9 @@ def role_suggestion_module():
     # Safe mapping of missing skills → missing courses
     missing_courses = []
     for skill in missing_skills:
-        idx = role_skills.index(skill)
-        missing_courses.append(courses[idx])
+        # Get first course from list, fallback to "No course available"
+        course_list = role_courses.get(skill, ["No course available"])
+        missing_courses.append(course_list[0] if course_list else "No course available")
 
     st.markdown(f"### 🎯 {selected_role}")
     st.markdown(f"- ✅ **Matched Skills:** {', '.join(matched_skills) if matched_skills else 'None'}")
@@ -969,9 +963,7 @@ def role_suggestion_module():
 
     if st.button("📊 View Chart"):
         go_to("chart_page")
-
-
-
+#==================================================================#
 def feedback_module():
     card_container("<h2>📝 Feedback</h2>")
     feedback_text = st.text_area("Share your feedback or suggestions", value=st.session_state.get("feedback", ""))
