@@ -381,18 +381,24 @@ role_skills_courses = {
     "QA / Test Engineer": {
         "skills": ["Selenium", "JUnit", "Test Automation", "Python", "Manual Testing"],
         "courses": [
+            "https://www.coursera.org/learn/selenium-webdriver",
+            "https://www.coursera.org/learn/automated-testing",
             "https://www.coursera.org/learn/software-testing",
-            "https://www.udemy.com/course/selenium-webdriver-tutorial-for-beginners/",
-            "https://www.edx.org/course/introduction-to-software-testing"
+            "https://www.coursera.org/learn/python-for-everybody",
+            "https://www.coursera.org/learn/manual-tester-training"
+
         ]
     },
     "IoT Developer": {
         "skills": ["Arduino", "Raspberry Pi", "Python", "C", "Sensors"],
         "courses": [
-            "https://www.coursera.org/specializations/internet-of-things",
-            "https://www.edx.org/course/iot-fundamentals",
-            "https://www.udemy.com/course/internet-of-things-iot-using-arduino-and-raspberry-pi/"
-        ]
+            "https://www.coursera.org/learn/arduino-platform" ,
+            "https://www.coursera.org/learn/the-raspberry-pi-platform-and-python-programming-for-the-raspberry-pi" ,
+            "https://www.coursera.org/learn/using-sensors-with-your-raspberry-pi" ,
+            "https://www.coursera.org/learn/python-for-everybody",
+            "https://www.coursera.org/learn/c-for-everyone"
+            "https://www.coursera.org/learn/using-sensors-with-your-raspberry-pi",
+                ]
     }
 }
 
