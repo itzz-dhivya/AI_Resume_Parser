@@ -393,10 +393,10 @@ role_skills_courses = {
         "skills": ["Arduino", "Raspberry Pi", "Python", "C", "Sensors"],
         "courses": [
             "https://www.coursera.org/learn/arduino-platform" ,
-            "https://www.coursera.org/learn/the-raspberry-pi-platform-and-python-programming-for-the-raspberry-pi" ,
+            "https://www.coursera.org/learn/raspberry-pi-platform",
             "https://www.coursera.org/learn/using-sensors-with-your-raspberry-pi" ,
             "https://www.coursera.org/learn/python-for-everybody",
-            "https://www.coursera.org/learn/c-for-everyone"
+            "https://www.coursera.org/learn/introduction-to-programming-with-c-language"
             "https://www.coursera.org/learn/using-sensors-with-your-raspberry-pi",
                 ]
     }
