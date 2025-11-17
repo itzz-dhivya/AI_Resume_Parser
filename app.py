@@ -918,37 +918,48 @@ def role_suggestion_module():
 
     card_container("<h2>💼 Role-Based Skill Suggestions</h2>")
 
+    # Filter computer-related roles
     computer_roles = [role for role in role_skills_courses.keys() if "Developer" in role or "Data" in role]
     selected_role = st.selectbox("Select a Role:", computer_roles)
 
     role_info = role_skills_courses[selected_role]
     role_skills = role_info.get("skills", [])
+    courses = role_info.get("courses", [])
 
     matched_skills = [s for s in role_skills if s in resume_skills]
     missing_skills = [s for s in role_skills if s not in resume_skills]
-    missing_courses = role_info.get("courses", ["No course available"] * len(missing_skills))
+
+    # Build missing_courses safely
+    missing_courses = []
+    for skill in missing_skills:
+        if skill in role_skills:
+            idx = role_skills.index(skill)
+            if idx < len(courses):
+                missing_courses.append(courses[idx])
+            else:
+                missing_courses.append("No course available")
+        else:
+            missing_courses.append("No course available")
 
     st.markdown(f"### 🎯 {selected_role}")
     st.markdown(f"- ✅ **Matched Skills:** {', '.join(matched_skills) if matched_skills else 'None'}")
 
     if missing_skills:
         st.markdown("### ⚡ Missing Skills & Suggested Courses:")
-        for i, skill in enumerate(missing_skills):
-            course = missing_courses[i] if i < len(missing_courses) else "No course available"
+        for skill, course in zip(missing_skills, missing_courses):
             st.markdown(f"- **{skill}** → [Course Link]({course})")
     else:
         st.success("You have all the required skills for this role! ✅")
 
-    # Generate the Word report automatically for download
+    # Generate Word report automatically
     profile = {
         "name": st.session_state.get("user", {}).get("username", "N/A"),
         "career_goal": "Based on Resume",
         "skills": ", ".join(resume_skills)
     }
-
     word_bytes = generate_word_report(profile, missing_skills, missing_courses, role_name=selected_role)
 
-    # 🟢 SINGLE download button
+    # Download button
     st.download_button(
         label="📄 Download Role Analysis Report",
         data=word_bytes,
@@ -959,6 +970,7 @@ def role_suggestion_module():
     # Optional chart navigation
     if st.button("📊 View Chart"):
         go_to("chart_page")
+
 
 
 def feedback_module():
