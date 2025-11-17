@@ -801,30 +801,28 @@ def recommendation_module():
         for role, info in role_skills_courses.items():
 
             role_skills = info.get("skills", [])
-            courses = info.get("courses", [])
+            courses_dict = info.get("courses", {})  # <-- courses is now a dict
 
             matched_skills = [s for s in role_skills if s in resume_skills]
 
-            # Always create match_score default
             match_score = 0
 
             if matched_skills:
 
                 missing_skills = [s for s in role_skills if s not in resume_skills]
 
-                # Correct mapping of missing skills → missing courses
                 missing_courses = []
                 for skill in missing_skills:
-                    if skill in role_skills:
-                        idx = role_skills.index(skill)
-                        if idx < len(courses):
-                            missing_courses.append(courses[idx])
+                    if skill in courses_dict:
+                        # Take the first available course link
+                        course_links = courses_dict[skill]
+                        if isinstance(course_links, list) and course_links:
+                            missing_courses.append(course_links[0])
                         else:
                             missing_courses.append("No course available")
                     else:
                         missing_courses.append("No course available")
 
-                # Calculate match score safely
                 if len(role_skills) > 0:
                     match_score = round(len(matched_skills) / len(role_skills) * 100, 2)
 
