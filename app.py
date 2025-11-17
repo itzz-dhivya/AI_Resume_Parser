@@ -922,9 +922,9 @@ def role_suggestion_module():
     computer_roles = [role for role in role_skills_courses.keys() if "Developer" in role or "Data" in role]
     selected_role = st.selectbox("Select a Role:", computer_roles)
 
-    role_info = role_skills_courses[selected_role]
+    role_info = role_skills_courses.get(selected_role, {})
     role_skills = role_info.get("skills", [])
-    courses = role_info.get("courses", [])
+    courses = role_info.get("courses") or []  # Ensure courses is a list
 
     matched_skills = [s for s in role_skills if s in resume_skills]
     missing_skills = [s for s in role_skills if s not in resume_skills]
@@ -934,9 +934,9 @@ def role_suggestion_module():
     for skill in missing_skills:
         if skill in role_skills:
             idx = role_skills.index(skill)
-            # Prevent IndexError if courses list is shorter
+            # Check if course exists, else fallback
             if idx < len(courses):
-                missing_courses.append(courses[idx])
+                missing_courses.append(courses[idx] or "No course available")
             else:
                 missing_courses.append("No course available")
         else:
