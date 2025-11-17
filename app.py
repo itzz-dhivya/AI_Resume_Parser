@@ -692,23 +692,36 @@ def recommendation_module():
     # ----------------- COMPUTE ONCE -----------------
     if "recommendations_cache" not in st.session_state:
         recommendations = []
+
         for role, info in role_skills_courses.items():
+
             role_skills = info.get("skills", [])
+            courses = info.get("courses", [])
+
             matched_skills = [s for s in role_skills if s in resume_skills]
 
+            # Always create match_score default
+            match_score = 0
+
             if matched_skills:
+
                 missing_skills = [s for s in role_skills if s not in resume_skills]
+
+                # Correct mapping of missing skills → missing courses
                 missing_courses = []
                 for skill in missing_skills:
-                    if skill in info["skills"]:
-                        index = info["skills"].index(skill)
-                        if index < len(info["courses"]):
-                            missing_courses.append(info["courses"][index])
+                    if skill in role_skills:
+                        idx = role_skills.index(skill)
+                        if idx < len(courses):
+                            missing_courses.append(courses[idx])
                         else:
                             missing_courses.append("No course available")
                     else:
                         missing_courses.append("No course available")
-                        match_score = round(len(matched_skills) / len(role_skills) * 100, 2) if role_skills else 0
+
+                # Calculate match score safely
+                if len(role_skills) > 0:
+                    match_score = round(len(matched_skills) / len(role_skills) * 100, 2)
 
                 recommendations.append({
                     "role": role,
@@ -717,6 +730,7 @@ def recommendation_module():
                     "missing_courses": missing_courses,
                     "score": match_score
                 })
+
         st.session_state["recommendations_cache"] = recommendations
 
     recommendations = st.session_state.get("recommendations_cache", [])
@@ -729,19 +743,20 @@ def recommendation_module():
             st.markdown(f"### 🎯 {rec['role']}")
             st.markdown(f"**Match Score:** {rec['score']}%")
             st.markdown(f"- ✅ **Matched Skills:** {', '.join(rec['matched_skills'])}")
+
             if rec["missing_skills"]:
                 st.markdown("**🧩 Missing Skills & Courses:**")
                 for i, skill in enumerate(rec["missing_skills"]):
                     course = rec["missing_courses"][i] if i < len(rec["missing_courses"]) else "No course available"
                     st.markdown(f"• {skill} → [Course]({course})")
+
             st.markdown("---")
 
     # ----------------- NAVIGATION BUTTONS -----------------
     col1, col2 = st.columns(2)
     with col1:
-        go_suggestions_clicked = st.button("Suggestions")
-        if go_suggestions_clicked:
-            go_to("role_suggestions")  # instant navigation using cached data
+        if st.button("Suggestions"):
+            go_to("role_suggestions")
     with col2:
         if st.button("Back"):
             go_to("resume_upload")
@@ -761,6 +776,7 @@ def recommendation_module():
                 st.success("✅ Analysis saved to database!")
             except Exception as e:
                 st.error(f"❌ Error saving analysis: {e}")
+
 
 #==============chart===============#
 def chart_module():
