@@ -918,7 +918,7 @@ def role_suggestion_module():
 
     card_container("<h2>💼 Role-Based Skill Suggestions</h2>")
 
-    # Filter computer-related roles
+    # Filter roles
     computer_roles = [role for role in role_skills_courses.keys() if "Developer" in role or "Data" in role]
     selected_role = st.selectbox("Select a Role:", computer_roles)
 
@@ -929,11 +929,12 @@ def role_suggestion_module():
     matched_skills = [s for s in role_skills if s in resume_skills]
     missing_skills = [s for s in role_skills if s not in resume_skills]
 
-    # Build missing_courses safely
+    # Safe mapping of missing skills → missing courses
     missing_courses = []
     for skill in missing_skills:
         if skill in role_skills:
             idx = role_skills.index(skill)
+            # Prevent IndexError if courses list is shorter
             if idx < len(courses):
                 missing_courses.append(courses[idx])
             else:
@@ -951,7 +952,7 @@ def role_suggestion_module():
     else:
         st.success("You have all the required skills for this role! ✅")
 
-    # Generate Word report automatically
+    # Generate Word report
     profile = {
         "name": st.session_state.get("user", {}).get("username", "N/A"),
         "career_goal": "Based on Resume",
@@ -959,7 +960,6 @@ def role_suggestion_module():
     }
     word_bytes = generate_word_report(profile, missing_skills, missing_courses, role_name=selected_role)
 
-    # Download button
     st.download_button(
         label="📄 Download Role Analysis Report",
         data=word_bytes,
