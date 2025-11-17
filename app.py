@@ -924,7 +924,14 @@ def role_suggestion_module():
 
     role_info = role_skills_courses.get(selected_role, {})
     role_skills = role_info.get("skills", [])
-    courses = role_info.get("courses") or []  # Ensure courses is a list
+
+    # Ensure courses is a list and has same length as role_skills
+    courses = role_info.get("courses")
+    if not isinstance(courses, list):
+        courses = ["No course available"] * len(role_skills)
+    elif len(courses) < len(role_skills):
+        # Pad missing course entries
+        courses += ["No course available"] * (len(role_skills) - len(courses))
 
     matched_skills = [s for s in role_skills if s in resume_skills]
     missing_skills = [s for s in role_skills if s not in resume_skills]
@@ -932,15 +939,8 @@ def role_suggestion_module():
     # Safe mapping of missing skills → missing courses
     missing_courses = []
     for skill in missing_skills:
-        if skill in role_skills:
-            idx = role_skills.index(skill)
-            # Check if course exists, else fallback
-            if idx < len(courses):
-                missing_courses.append(courses[idx] or "No course available")
-            else:
-                missing_courses.append("No course available")
-        else:
-            missing_courses.append("No course available")
+        idx = role_skills.index(skill)
+        missing_courses.append(courses[idx])
 
     st.markdown(f"### 🎯 {selected_role}")
     st.markdown(f"- ✅ **Matched Skills:** {', '.join(matched_skills) if matched_skills else 'None'}")
@@ -967,7 +967,6 @@ def role_suggestion_module():
         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     )
 
-    # Optional chart navigation
     if st.button("📊 View Chart"):
         go_to("chart_page")
 
