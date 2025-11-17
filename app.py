@@ -141,153 +141,153 @@ def load_lottie(url):
 # ----------------- ROLE SKILLS & COURSES -----------------
 # ----------------- ROLE SKILLS & COURSES -----------------
 role_skills_courses = {
-
-    # ---------------- Software / Web / Mobile Developers ----------------
     "Software Developer": {
         "skills": ["Python", "Java", "C++", "C#", "SQL", "Git"],
         "courses": [
-            "https://www.freecodecamp.org/learn/python/",
-            "https://www.udacity.com/course/java-programming-basics--ud282",
-            "https://www.freecodecamp.org/news/learn-c-plus-plus-free-course/",
-            "https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/",
-            "https://www.kaggle.com/learn/intro-to-sql",
-            "https://www.freecodecamp.org/news/git-and-github-free-course/"
+            "https://www.coursera.org/learn/python",
+            "https://www.coursera.org/learn/java-programming",
+            "https://www.coursera.org/specializations/c-plus-plus-modern",
+            "https://www.coursera.org/learn/c-sharp",
+            "https://www.coursera.org/learn/sql-for-data-science",
+            "https://www.coursera.org/learn/introduction-git-github"
         ]
     },
 
     "Front-End Developer": {
         "skills": ["HTML", "CSS", "JavaScript", "React", "Vue.js"],
         "courses": [
-            "https://www.freecodecamp.org/learn/responsive-web-design/",
-            "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
-            "https://www.freecodecamp.org/news/learn-react-free/",
-            "https://vuejs.org/tutorial/",
-            "https://www.freecodecamp.org/learn/front-end-development-libraries/"
+            "https://www.coursera.org/learn/html-css-javascript",
+            "https://www.coursera.org/learn/javascript-basics",
+            "https://www.coursera.org/learn/react-basics",
+            "https://www.coursera.org/projects/vuejs-intro",
+            "https://www.coursera.org/learn/front-end-development"
         ]
     },
 
     "Back-End Developer": {
         "skills": ["Python", "Node.js", "Java", "SQL", "REST APIs"],
         "courses": [
-            "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
-            "https://www.udacity.com/course/java-programming-basics--ud282",
-            "https://www.kaggle.com/learn/sql",
-            "https://www.freecodecamp.org/news/rest-api-tutorial/"
+            "https://www.coursera.org/learn/python",
+            "https://www.coursera.org/learn/nodejs-basics",
+            "https://www.coursera.org/learn/java-programming",
+            "https://www.coursera.org/learn/sql-for-data-science",
+            "https://www.coursera.org/learn/rest-api"
         ]
     },
 
     "Full Stack Developer": {
         "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Python", "SQL"],
         "courses": [
-            "https://www.freecodecamp.org/learn/",
-            "https://www.freecodecamp.org/news/learn-react-free/",
-            "https://www.kaggle.com/learn/sql"
+            "https://www.coursera.org/specializations/full-stack",
+            "https://www.coursera.org/learn/react-basics",
+            "https://www.coursera.org/learn/nodejs-basics"
         ]
     },
 
     "Mobile App Developer": {
         "skills": ["Flutter", "React Native", "Swift", "Kotlin"],
         "courses": [
-            "https://docs.flutter.dev/codelabs",
-            "https://www.freecodecamp.org/news/learn-react-native-free-course/",
-            "https://developer.apple.com/learn/courses/swift/",
-            "https://developer.android.com/courses"
+            "https://www.coursera.org/projects/flutter-build-app",
+            "https://www.coursera.org/learn/react-native",
+            "https://www.coursera.org/learn/swift-programming",
+            "https://www.coursera.org/learn/kotlin-for-java-developers"
         ]
     },
 
     "Game Developer": {
         "skills": ["Unity", "Unreal Engine", "C#", "C++"],
         "courses": [
-            "https://learn.unity.com/",
-            "https://www.freecodecamp.org/news/unreal-engine-tutorial/",
-            "https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/",
-            "https://www.freecodecamp.org/news/learn-c-plus-plus-free-course/"
+            "https://www.coursera.org/specializations/game-design",
+            "https://www.coursera.org/projects/unreal-engine",
+            "https://www.coursera.org/learn/c-sharp",
+            "https://www.coursera.org/specializations/c-plus-plus-modern"
         ]
     },
 
     "UI/UX Designer": {
         "skills": ["Figma", "Adobe XD", "Sketch", "Prototyping"],
         "courses": [
-            "https://www.figma.com/resources/learn-design/",
-            "https://www.edx.org/course/introduction-to-user-experience-design",
-            "https://www.freecodecamp.org/news/learn-ui-ux-design-free/"
+            "https://www.coursera.org/learn/ui-ux-design",
+            "https://www.coursera.org/learn/user-interface-design",
+            "https://www.coursera.org/learn/ux-design"
         ]
     },
 
     "Embedded Developer": {
         "skills": ["C", "C++", "Microcontrollers", "RTOS"],
         "courses": [
-            "https://www.edx.org/course/embedded-systems",
-            "https://www.freecodecamp.org/news/embedded-programming-course/",
-            "https://www.programiz.com/c-programming"
+            "https://www.coursera.org/learn/introduction-embedded-systems",
+            "https://www.coursera.org/specializations/c-plus-plus-modern",
+            "https://www.coursera.org/learn/microcontrollers"
         ]
     },
 
     "Python Developer": {
         "skills": ["Python", "Flask", "Django", "Pandas", "NumPy"],
         "courses": [
-            "https://www.freecodecamp.org/learn/python/",
-            "https://www.freecodecamp.org/news/learn-flask-full-course/",
-            "https://www.freecodecamp.org/news/learn-django-free/",
-            "https://www.kaggle.com/learn/pandas",
-            "https://www.kaggle.com/learn/numpy"
+            "https://www.coursera.org/learn/python",
+            "https://www.coursera.org/learn/flask",
+            "https://www.coursera.org/learn/django-web-framework",
+            "https://www.coursera.org/learn/data-analysis-with-python",
+            "https://www.coursera.org/learn/numpy"
         ]
     },
 
     "Java Developer": {
         "skills": ["Java", "Spring", "Hibernate", "SQL"],
         "courses": [
-            "https://www.udacity.com/course/java-programming-basics--ud282",
-            "https://www.freecodecamp.org/news/spring-boot-tutorial-learn/",
-            "https://www.kaggle.com/learn/sql"
+            "https://www.coursera.org/learn/java-programming",
+            "https://www.coursera.org/projects/spring-boot-rest-service",
+            "https://www.coursera.org/projects/hibernate-basics",
+            "https://www.coursera.org/learn/sql-for-data-science"
         ]
     },
 
     "C++ Developer": {
         "skills": ["C++", "STL", "OOP", "Data Structures"],
         "courses": [
-            "https://www.freecodecamp.org/news/learn-c-plus-plus-free-course/",
-            "https://www.geeksforgeeks.org/the-c-standard-template-library-stl/",
-            "https://www.freecodecamp.org/news/data-structures-cpp/"
+            "https://www.coursera.org/specializations/c-plus-plus-modern",
+            "https://www.coursera.org/projects/cpp-stl",
+            "https://www.coursera.org/learn/data-structures",
+            "https://www.coursera.org/learn/oop-cpp"
         ]
     },
 
-    # ---------------- Data / AI / ML ----------------
     "Data Analyst": {
         "skills": ["Excel", "SQL", "Python", "Tableau", "Power BI"],
         "courses": [
-            "https://www.coursera.org/learn/excel-data-analysis-free",
-            "https://www.kaggle.com/learn/sql",
-            "https://www.freecodecamp.org/learn/data-analysis-with-python/",
-            "https://www.tableau.com/learn/training",
-            "https://learn.microsoft.com/en-us/training/powerplatform/power-bi"
+            "https://www.coursera.org/learn/excel-data-analysis",
+            "https://www.coursera.org/learn/sql-for-data-science",
+            "https://www.coursera.org/learn/data-analysis-with-python",
+            "https://www.coursera.org/learn/data-visualization-tableau",
+            "https://www.coursera.org/learn/power-bi"
         ]
     },
 
     "Data Scientist": {
         "skills": ["Python", "SQL", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"],
         "courses": [
-            "https://www.freecodecamp.org/learn/data-science/",
-            "https://www.kaggle.com/learn/data-science",
-            "https://www.kaggle.com/learn/python"
+            "https://www.coursera.org/specializations/data-science-python",
+            "https://www.coursera.org/learn/sql-for-data-science",
+            "https://www.coursera.org/learn/data-analysis-with-python"
         ]
     },
 
     "Machine Learning Engineer": {
         "skills": ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "ML algorithms"],
         "courses": [
-            "https://www.freecodecamp.org/learn/machine-learning-with-python/",
-            "https://www.tensorflow.org/tutorials",
-            "https://www.kaggle.com/learn/intro-to-machine-learning"
+            "https://www.coursera.org/learn/machine-learning",
+            "https://www.coursera.org/learn/introduction-tensorflow",
+            "https://www.coursera.org/learn/deep-neural-networks"
         ]
     },
 
     "AI Engineer": {
         "skills": ["Python", "Deep Learning", "NLP", "TensorFlow", "PyTorch"],
         "courses": [
-            "https://www.freecodecamp.org/learn/machine-learning-with-python/",
-            "https://www.fast.ai/",
-            "https://www.kaggle.com/learn/intro-to-deep-learning"
+            "https://www.coursera.org/learn/machine-learning",
+            "https://www.coursera.org/specializations/deep-learning",
+            "https://www.coursera.org/learn/nlp-sequence-models"
         ]
     },
 
@@ -295,59 +295,58 @@ role_skills_courses = {
         "skills": ["Python", "NLP", "SpaCy", "NLTK", "Transformers"],
         "courses": [
             "https://www.coursera.org/learn/language-processing",
-            "https://www.kaggle.com/learn/intro-to-nlp",
-            "https://www.fast.ai/"
+            "https://www.coursera.org/learn/nlp-sequence-models",
+            "https://www.coursera.org/learn/transformers"
         ]
     },
 
     "Big Data Engineer": {
         "skills": ["Hadoop", "Spark", "Python", "SQL"],
         "courses": [
-            "https://www.edx.org/course/big-data-analysis-with-python",
-            "https://www.datacamp.com/learn/courses/introduction-to-pyspark",
-            "https://www.kaggle.com/learn/sql"
+            "https://www.coursera.org/learn/hadoop",
+            "https://www.coursera.org/learn/pyspark",
+            "https://www.coursera.org/learn/sql-for-data-science"
         ]
     },
 
-    # ---------------- Cloud / DevOps / Security ----------------
     "Cloud Engineer": {
         "skills": ["AWS", "Azure", "GCP", "Docker", "Kubernetes"],
         "courses": [
-            "https://www.aws.training/",
-            "https://learn.microsoft.com/en-us/training/azure/",
-            "https://www.cloudskillsboost.google/",
-            "https://www.edx.org/course/docker-essentials",
-            "https://kubernetes.io/docs/tutorials/"
+            "https://www.coursera.org/learn/aws-cloud",
+            "https://www.coursera.org/learn/azure-cloud",
+            "https://www.coursera.org/learn/gcp-fundamentals",
+            "https://www.coursera.org/learn/docker",
+            "https://www.coursera.org/learn/kubernetes-basics"
         ]
     },
 
     "DevOps Engineer": {
         "skills": ["Linux", "CI/CD", "Docker", "Kubernetes", "Python", "Git"],
         "courses": [
-            "https://www.edx.org/course/introduction-to-linux",
-            "https://www.freecodecamp.org/news/devops-tutorial/",
-            "https://www.edx.org/course/docker-essentials",
-            "https://kubernetes.io/docs/tutorials/",
-            "https://www.freecodecamp.org/learn/python/",
-            "https://www.freecodecamp.org/news/git-and-github-free-course/"
+            "https://www.coursera.org/learn/linux",
+            "https://www.coursera.org/learn/ci-cd",
+            "https://www.coursera.org/learn/docker",
+            "https://www.coursera.org/learn/kubernetes-basics",
+            "https://www.coursera.org/learn/python",
+            "https://www.coursera.org/learn/introduction-git-github"
         ]
     },
 
     "Network Engineer": {
         "skills": ["Routing", "Switching", "Firewalls", "TCP/IP", "Cisco"],
         "courses": [
-            "https://www.netacad.com/",
-            "https://www.edx.org/course/computer-networking",
-            "https://www.freecodecamp.org/news/computer-networking-course/"
+            "https://www.coursera.org/learn/computer-networking",
+            "https://www.coursera.org/learn/cisco-networking",
+            "https://www.coursera.org/learn/network-security"
         ]
     },
 
     "Cybersecurity Analyst": {
         "skills": ["Network Security", "Penetration Testing", "Firewalls", "Python"],
         "courses": [
-            "https://www.cybrary.it/",
-            "https://www.edx.org/course/cybersecurity-fundamentals",
-            "https://www.freecodecamp.org/learn/python/"
+            "https://www.coursera.org/learn/cybersecurity",
+            "https://www.coursera.org/learn/ethical-hacking",
+            "https://www.coursera.org/learn/python"
         ]
     },
 
@@ -355,37 +354,37 @@ role_skills_courses = {
         "skills": ["Troubleshooting", "Windows OS", "Linux OS", "Networking basics"],
         "courses": [
             "https://www.coursera.org/professional-certificates/google-it-support",
-            "https://www.edx.org/course/introduction-to-it",
-            "https://www.freecodecamp.org/news/computer-networking-course/"
+            "https://www.coursera.org/learn/introduction-to-it",
+            "https://www.coursera.org/learn/computer-networking"
         ]
     },
 
-    # ---------------- Database / Analytics ----------------
     "Database Administrator": {
         "skills": ["SQL", "PostgreSQL", "MySQL", "Oracle", "Performance Tuning"],
         "courses": [
-            "https://www.kaggle.com/learn/sql",
-            "https://www.freecodecamp.org/news/learn-sql-free-full-course/",
-            "https://www.edx.org/course/oracle-database-foundations"
+            "https://www.coursera.org/learn/sql-for-data-science",
+            "https://www.coursera.org/learn/postgresql",
+            "https://www.coursera.org/learn/mysql",
+            "https://www.coursera.org/learn/oracle-database"
         ]
     },
 
     "Business Analyst": {
         "skills": ["Excel", "SQL", "Data Visualization", "Power BI", "Tableau"],
         "courses": [
-            "https://www.coursera.org/learn/excel-data-analysis-free",
-            "https://learn.microsoft.com/en-us/training/powerplatform/power-bi",
-            "https://www.tableau.com/learn/training"
+            "https://www.coursera.org/learn/excel-data-analysis",
+            "https://www.coursera.org/learn/sql-for-data-science",
+            "https://www.coursera.org/learn/power-bi",
+            "https://www.coursera.org/learn/data-visualization-tableau"
         ]
     },
 
-    # ---------------- Emerging / Modern Roles ----------------
     "Robotics Engineer": {
         "skills": ["C++", "Python", "ROS", "Embedded Systems"],
         "courses": [
             "https://www.coursera.org/learn/robotics",
-            "https://www.edx.org/course/robotics",
-            "https://www.freecodecamp.org/news/embedded-programming-course/"
+            "https://www.coursera.org/specializations/c-plus-plus-modern",
+            "https://www.coursera.org/learn/introduction-ros"
         ]
     },
 
@@ -393,29 +392,29 @@ role_skills_courses = {
         "skills": ["Solidity", "Ethereum", "Smart Contracts", "Web3.js"],
         "courses": [
             "https://www.coursera.org/learn/blockchain-basics",
-            "https://www.edx.org/course/blockchain-fundamentals",
-            "https://cryptozombies.io/"
+            "https://www.coursera.org/learn/smart-contracts",
+            "https://www.coursera.org/learn/ethereum"
         ]
     },
 
     "AR/VR Developer": {
         "skills": ["Unity", "Unreal Engine", "C#", "3D Modeling"],
         "courses": [
-            "https://learn.unity.com/",
-            "https://www.freecodecamp.org/news/unreal-engine-tutorial/",
-            "https://www.freecodecamp.org/news/csharp-full-course/",
-            "https://www.blender.org/support/tutorials/"
+            "https://www.coursera.org/specializations/game-design",
+            "https://www.coursera.org/projects/unreal-engine",
+            "https://www.coursera.org/learn/c-sharp",
+            "https://www.coursera.org/learn/3d-modeling"
         ]
     },
 
     "QA / Test Engineer": {
         "skills": ["Selenium", "JUnit", "Test Automation", "Python", "Manual Testing"],
         "courses": [
-            "https://www.freecodecamp.org/news/learn-selenium-free/",
-            "https://www.freecodecamp.org/news/automation-testing-course/",
-            "https://www.freecodecamp.org/news/software-testing-free-course/",
-            "https://www.freecodecamp.org/news/python-full-course/",
-            "https://www.freecodecamp.org/news/manual-testing-free-course/"
+            "https://www.coursera.org/learn/selenium-webdriver",
+            "https://www.coursera.org/learn/junit",
+            "https://www.coursera.org/learn/automated-testing",
+            "https://www.coursera.org/learn/python",
+            "https://www.coursera.org/learn/software-testing"
         ]
     },
 
@@ -423,10 +422,10 @@ role_skills_courses = {
         "skills": ["Arduino", "Raspberry Pi", "Python", "C", "Sensors"],
         "courses": [
             "https://www.coursera.org/learn/arduino-platform",
-            "https://www.coursera.org/learn/raspberry-pi-platform",
+            "https://www.coursera.org/learn/the-raspberry-pi-platform-and-python-programming-for-the-raspberry-pi",
             "https://www.coursera.org/learn/using-sensors-with-your-raspberry-pi",
-            "https://www.freecodecamp.org/learn/python/",
-            "https://www.programiz.com/c-programming"
+            "https://www.coursera.org/learn/python",
+            "https://www.coursera.org/learn/c-for-everyone"
         ]
     }
 }
