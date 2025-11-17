@@ -149,7 +149,7 @@ role_skills_courses = {
             "https://www.coursera.org/learn/java-programming",
             "https://www.udemy.com/course/beginning-c-plus-plus-programming/",
             "https://learn.microsoft.com/en-us/training/paths/csharp-first-steps/",
-            "https://www.kaggle.com/learn/sql",
+            "https://www.kaggle.com/learn/intro-to-sql",
             "https://www.coursera.org/learn/introduction-git-github"
         ]
     },
