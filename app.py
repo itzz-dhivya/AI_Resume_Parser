@@ -698,9 +698,17 @@ def recommendation_module():
 
             if matched_skills:
                 missing_skills = [s for s in role_skills if s not in resume_skills]
-                missing_courses = [info["courses"][info["skills"].index(skill)]
-                                   for skill in missing_skills]
-                match_score = round(len(matched_skills) / len(role_skills) * 100, 2) if role_skills else 0
+                missing_courses = []
+                for skill in missing_skills:
+                    if skill in info["skills"]:
+                        index = info["skills"].index(skill)
+                        if index < len(info["courses"]):
+                            missing_courses.append(info["courses"][index])
+                        else:
+                            missing_courses.append("No course available")
+                    else:
+                        missing_courses.append("No course available")
+                        match_score = round(len(matched_skills) / len(role_skills) * 100, 2) if role_skills else 0
 
                 recommendations.append({
                     "role": role,
